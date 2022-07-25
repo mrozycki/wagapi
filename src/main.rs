@@ -34,7 +34,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
 
             let data = scale.get_data(&session).await?;
             println!("Received data: {:?}", data);
-
+            scale.disconnect(&session).await?;
             return Ok(());
         }
     }
